@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'YourCustomFont';
+    src: url('../fonts/NBAPacers.ttf') format('truetype');
+}
+
+/* General page styles */
+body {
+    font-family: 'YourCustomFont', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: black;
+    /* overflow: hidden; */
+    position: relative;
+    background-color:black;
+    background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 10px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 10px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 10px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 10px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+/* ----------------------------- */
+/* NAV BAR STYLING */
+/* ----------------------------- */
+nav {
+    background-color: black; 
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center; /* Center content using text-align */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
+    position: relative; /* Enable relative positioning */
+}
+
+nav ul li {
+    display: inline-block; /* Inline-block for horizontal list items */
+}
+
+nav ul li.home {
+    position: relative;
+    z-index: 2;
+    margin-left: -5%;
+}
+nav ul li.home a {
+    position: relative; /* Required for absolute positioning of child elements */
+    display: inline-block; /* Aligns text properly */
+}
+
+nav a, nav a img {
+    color: white;
+    text-decoration: none;
+    font-size: 2em; /* Adjust the font size as needed */
+    font-family: 'Cairo', sans-serif;
+}
+
+.halinav{
+    /* padding-top: 10px; */
+    margin-left: .5em;
+    padding: 10px 5px;
+    width:.2em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: grey;
+}
+nav a img:hover {
+    border-bottom: 1.5px solid #BEC0C2; /* Underline effect for image */
+    display: inline-block;
+    padding-bottom: 5px; /*Add some space below the image*/
+}
+nav a.active img {
+    border-bottom: 1.5px solid #BEC0C2; /* Underline effect for image */
+    display: inline-block;
+    padding-bottom: 5px; /* Add some space below the image */
+}
+
+nav ul li.home a .additional-text {
+    color: #BEC0C2;
+    display: inline-block; /* Keep it in line */
+    opacity: 0; /* Start with text fully transparent */
+    transition: opacity 0.3s ease; /* Animate the opacity property */
+    margin-left: 10px; /* Space between 'Home' and the additional text */
+    vertical-align:baseline; /* Align vertically if needed */
+    font-size: smaller;
+}
+
+nav ul li.home a:hover .additional-text {
+    opacity: .4; /* Fully visible on hover */
+    text-decoration: underline;
+    text-decoration-color: grey;
+}
+
+nav ul li.second {
+    position: absolute;
+    /* left: 0; Position the second item to the left */
+    top: 0;
+}
+
+/* ===================================================== */
+ 
+/* Content styling to push down below fixed nav */
+.content {
+    margin-top: 10%;  /* Adjust as needed based on nav height */
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+.content *{
+    /* border-style: solid;
+    border-color: white; */
+}
+.content-card{
+    display:flex;
+    flex-direction: column;
+  }
+.title{
+    display:inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: stretch;
+    color:#FDBB30;
+    background: lighten(brown, 5%);
+    text-shadow: 6px -3px 1px #002D62, 
+                 9px 5px 1px rgba(190, 192, 194,.30);
+}
+
+.title img{
+    padding-left: 5%;
+}
+.title-text{
+    width:50%;
+    font-size: 1.5em;
+
+}
+.title-text h1,h2,h4{
+    margin:auto;
+    text-align: end;
+    align-self: flex-start;
+}
+
+@keyframes flash-shadow {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(253, 187, 48, 0.75)); /* Shadow more visible */
+    }
+    50% {
+        filter: drop-shadow(0 0 10px rgba(253, 187, 48, 0)); /* Shadow invisible */
+    }
+}
+  
+.halipng1{
+    width: 25%;        /* Example: set width to 100% of its container */
+    height: auto;       /* Adjust height automatically */
+    margin: 0 0;     /* Center the image */
+    animation: flash-shadow 2s infinite;
+}
+
+.intro{
+    font-size: smaller;
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: #f9f9f9;
+    margin-top:6em;
+}
+
+
+.basestat {
+    margin-top:5%;
+    margin-bottom:5%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* line-height: 0.1em; */
+}
+
+
+/* crown effect */
+.crown {
+    color: gold;
+    font-size: 1em; /* Adjust size as needed */
+    /* text-align: center;
+    position: relative; */
+    text-shadow: 0 0 10px gold, 0 0 20px gold; /* Glowing effect */
+    /* align-self: flex-end; */
+}
+
+/* crown effect
+.basestat span i{
+    align-self: center;
+} */
+
+#plot-container {
+    /* width: 60%; */
+    /* margin: auto;
+    padding: 20px; */
+}
+ .assistbox{
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }
+
+ .assistbox div{
+    flex: 1 1 0%
+ }
+
